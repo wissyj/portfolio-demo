@@ -1,0 +1,125 @@
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  overflow: hidden;
+  line-height: 1.7;
+}
+
+.btn-dark, .btn-light, .btn-main {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  transition: all 0.5s;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-main {
+  color: #333;
+  background-color: #ffbc00;
+}
+.btn-light {
+  color: #333;
+  background-color: #f4f4f4;
+}
+.btn-dark {
+  color: #fff;
+  background-color: #333;
+}
+
+button[class^=btn-]:hover,
+a[class^=btn-]:hover,
+input[class^=btn-]:hover {
+  background-color: #ffbc00;
+}
+
+.increase {
+  font-size: 1.3rem;
+  padding-bottom: 1rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.underline {
+  width: 4rem;
+  height: 3px;
+  background: #ffbc00;
+  display: block;
+  margin: 0 auto 1rem auto;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 100;
+}
+
+.clr {
+  clear: right;
+}
+
+.py-5 {
+  padding: 0.5rem 0;
+}
+.py-1 {
+  padding: 1rem 0;
+}
+.py-2 {
+  padding: 2rem 0;
+}
+.py-3 {
+  padding: 3rem 0;
+}
+.py-4 {
+  padding: 4rem 0;
+}
+
+.my-1 {
+  margin: 1rem 0;
+}
+.my-2 {
+  margin: 2rem 0;
+}
+.my-3 {
+  margin: 3rem 0;
+}
+.my-4 {
+  margin: 4rem 0;
+}
+
+@media (max-width: 780px) {
+  .logo {
+    position: absolute;
+    transform: translateX(28vw);
+  }
+  #main-nav {
+    flex-direction: column;
+    -moz-column-gap: 2rem;
+         column-gap: 2rem;
+    height: 6rem;
+    width: 100vw;
+    position: absolute;
+    left: 10vw;
+  }
+  #home-a .specials {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  #home-b .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  #home-b .stats div:nth-child(odd) {
+    background: none;
+  }
+  #home-b .stats div:first-child, #home-b .stats div:last-child {
+    background: #ccc;
+  }
+}
+@media (max-width: 600px) {
+  #home-a .specials {
+    display: block;
+  }
+  #home-b .stats {
+    display: block;
+  }
+}

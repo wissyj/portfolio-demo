@@ -1,0 +1,92 @@
+.container {
+  max-width: $website-width;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  overflow: hidden;
+  line-height: 1.7;
+}
+
+//buttons styling
+%btn-shared {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  transition: all 0.5s;
+  border: none;
+  cursor: pointer;
+}
+.btn {
+  &-main {
+    @extend %btn-shared;
+    color: #333;
+    background-color: $main-color;
+  }
+  &-light {
+    @extend %btn-shared;
+    color: #333;
+    background-color: $light-color;
+  }
+  &-dark {
+    @extend %btn-shared;
+    color: #fff;
+    background-color: $dark-color;
+  }
+}
+button[class^="btn-"]:hover,
+a[class^="btn-"]:hover,
+input[class^="btn-"]:hover {
+  background-color: $main-color;
+}
+.increase {
+  font-size: 1.3rem;
+  padding-bottom: 1rem;
+}
+.text-center {
+  text-align: center;
+}
+.underline {
+  width: 4rem;
+  height: 3px;
+  background: $main-color;
+  display: block;
+  margin: 0 auto 1rem auto;
+}
+.section-title {
+  font-size: 2rem;
+  font-weight: 100;
+}
+.clr {
+  clear: right;
+}
+//padding
+.py {
+  &-5 {
+    padding: 0.5rem 0;
+  }
+  &-1 {
+    padding: 1rem 0;
+  }
+  &-2 {
+    padding: 2rem 0;
+  }
+  &-3 {
+    padding: 3rem 0;
+  }
+  &-4 {
+    padding: 4rem 0;
+  }
+}
+//margin
+.my {
+  &-1 {
+    margin: 1rem 0;
+  }
+  &-2 {
+    margin: 2rem 0;
+  }
+  &-3 {
+    margin: 3rem 0;
+  }
+  &-4 {
+    margin: 4rem 0;
+  }
+}

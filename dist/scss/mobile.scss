@@ -1,0 +1,52 @@
+@import "config";
+@import "utilities";
+@media (max-width: 780px) {
+  .logo {
+    position: absolute;
+    transform: translateX(28vw);
+  }
+  #main-nav {
+    flex-direction: column;
+    column-gap: 2rem;
+    height: 6rem;
+    width: 100vw;
+    position: absolute;
+    left: 10vw;
+  }
+  #home {
+    &-a {
+      .specials {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    &-b {
+      .stats {
+        grid-template-columns: repeat(2, 1fr);
+        div {
+          &:nth-child(odd) {
+            background: none;
+          }
+          &:first-child,
+          &:last-child {
+            background: $medium-color;
+          }
+        }
+      }
+    }
+  }
+}
+//600px media queries
+@media (max-width: 600px) {
+  #home {
+    &-a {
+      .specials {
+        display: block;
+      }
+    }
+    &-b {
+      .stats {
+        display: block;
+      }
+    }
+  }
+}
