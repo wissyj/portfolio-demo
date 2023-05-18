@@ -219,36 +219,43 @@ img {
 }
 #home-c .process {
   display: grid;
-  grid-gap: 1rem;
   grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1.5rem;
+  text-align: center;
 }
 #home-c .process-step {
   position: absolute;
   top: 0;
   right: 0;
   font-size: 28px;
-  color: #fff;
   background: #ffbc00;
-  width: 15px;
+  color: set-text-color(#ffbc00);
+  border-radius: 50%;
   height: 15px;
+  width: 15px;
   line-height: 15px;
   padding: 1rem;
-  border-radius: 50%;
   transition: all 1s;
 }
 #home-c .process-icon {
+  border-radius: 50%;
   background: #333;
-  width: 75px;
-  height: 75px;
-  line-height: 75px;
-  padding: 1rem;
+  color: set-text-color(#333);
+  padding: 2rem;
+  width: 70px;
+  height: 70px;
+  line-height: 70px;
+  text-align: center;
   position: relative;
   transition: all 1s;
-  text-align: center;
-  border-radius: 50%;
 }
-#home-c svg {
-  width: 3rem;
-  height: 3rem;
-  fill: #ffbc00;
+#home-c .process-icon:hover {
+  background: #ffbc00;
+  width: 90px;
+  height: 90px;
+  line-height: 90px;
+}
+#home-c .process-icon:hover .process-step {
+  background: #333;
+  color: set-text-color(#333);
 }
