@@ -92,11 +92,11 @@ input[class^=btn-]:hover {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "open sans", sans-serif;
+  font-family: "Dosis", sans-serif;
 }
 
 body {
-  font-family: "dosis", sans-serif;
+  font-family: "Dosis", sans-serif;
 }
 
 h2,
