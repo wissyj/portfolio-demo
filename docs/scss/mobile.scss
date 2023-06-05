@@ -1,18 +1,13 @@
 @import "config";
 @import "utilities";
+.first-btn {
+  background-color: $main-color;
+  border-radius: 10px;
+  &:hover {
+    border: 1px solid $dark-color;
+  }
+}
 @media (max-width: 780px) {
-  .logo {
-    position: absolute;
-    transform: translateX(28vw);
-  }
-  #main-nav {
-    flex-direction: column;
-    column-gap: 2rem;
-    height: 6rem;
-    width: 100vw;
-    position: absolute;
-    left: 10vw;
-  }
   #home {
     &-a {
       .specials {
@@ -33,20 +28,81 @@
         }
       }
     }
+    &-c {
+      .process {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
   }
 }
 //600px media queries
+
 @media (max-width: 600px) {
+  #main-nav {
+    li {
+      padding: 1rem 1rem;
+    }
+  }
   #home {
     &-a {
       .specials {
         display: block;
+        & div {
+          padding: 1rem 0;
+        }
       }
     }
     &-b {
       .stats {
         display: block;
+        div {
+          &:nth-child(odd) {
+            background: none;
+          }
+          &:nth-child(even) {
+            background: $medium-color;
+          }
+        }
+      }
+    }
+    &-c {
+      .process {
+        display: block;
+      }
+    }
+  }
+  footer {
+    display: block;
+    text-align: center;
+    .footer {
+      &-right {
+        justify-content: center;
       }
     }
   }
 }
+//500px media query
+@media (max-width: 500px) {
+  #header {
+    &-home {
+      height: 10rem;
+      border-bottom: 2px solid $main-color;
+      background-position: 30% 20% / cover;
+      #main-nav {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        row-gap: 3rem;
+        padding: 0;
+        .logo {
+          margin-top: 0.5rem;
+          left: 45%;
+        }
+      } //header-content
+      .header-content {
+        display: none;
+      }
+    }
+  }
+}
+// stop using import in css, go to fonts,google.com and get link

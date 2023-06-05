@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Text Flipper</title>
+</head>
+
+<body>
+    <h1>Auto Text Flipper</h1>
+    <p id="textContainer"></p>
+
+
+    <script>
+        var words = ["Hello", "World", "JavaScript", "Flipper"];
+        var currentIndex = 0;
+        var textContainer = document.getElementById("textContainer");
+
+        function flipText() {
+            textContainer.textContent = words[currentIndex];
+            currentIndex = (currentIndex + 1) % words.length;
+        }
+
+        setInterval(flipText, 2000); // Flip the text every 2 seconds (2000 milliseconds)
+    </script>
+</body>
+
+</html>
