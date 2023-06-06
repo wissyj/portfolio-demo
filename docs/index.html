@@ -16,11 +16,12 @@
   <link rel="stylesheet" href="./css/main.css" />
   <link rel="stylesheet" href="./css/mobile.css" />
 </head>
+<!-- create readme.md file -->
 
 <body>
-  <!-- <div id="preloader">
+  <div id="preloader">
     <div id="gif"></div>
-  </div> -->
+  </div>
   <header id="header-home">
     <div id="container">
       <div class="header-container">
@@ -29,6 +30,12 @@
             <div class="logo" alt="logo image"></div>
             <p>Tech Wissy</p>
           </h3>
+          <ul>
+            <li><a href="./index.html" class="current">Home</a></li>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./my work.html">My Work</a></li>
+            <li><a href="./contact.html">Contact me</a></li>
+          </ul>
         </nav>
         <div class="header-box">
 
@@ -40,20 +47,23 @@
 
             </h1>
             <p class="increase hidden2">
-              I specialize in modern Web designs, UI/UX development and top notch
-              video editing.
+              I specialize in <strong>modern</strong> Web <strong>designs</strong>, UI/UX <strong> development</strong>
+              and top notch
+              video <strong>editing</strong>.
             </p>
             <a href="./my work.html" class="btn-light hidden first-btn">View my work</a>
+            <div class="social-icons-home">
+              <ul>
+                <li><a href="https://facebook.com"><img src="./img/facebook.png" alt="facebook icon"></a></li>
+                <li><a href="https://twitter.com"><img src="./img/twitter.png" alt="twitter icon"></a></li>
+                <li><a href="https://Instagram.com"><img src="./img/instagram.png" alt="Instagram icon"></a></li>
+                <li><a href="https://Linkedin.com"><img src="./img/facebook.png" alt="LinkedIn icon"></a></li>
+                <li><a href="https://Dribble.com"><img src="./img/facebook.png" alt="Dribble icon"></a></li>
+              </ul>
+            </div>
+            <p class="bottom-text">Your Satisfaction is my utmost concern.</p>
           </div>
           <div class="header-content-two">
-            <nav id="main-nav">
-              <ul>
-                <li><a href="./index.html" class="current">Home</a></li>
-                <li><a href="./about.html">About</a></li>
-                <li><a href="./my work.html">My Work</a></li>
-                <li><a href="./contact.html">Contact me</a></li>
-              </ul>
-            </nav>
             <h3 class="py-5 ">
               <div class="logo"></div>
             </h3>
@@ -245,8 +255,17 @@
       </div>
     </div>
   </footer>
-  <!-- <script src="./js/typewriter.js"></script> -->
-  <script>//flipper
+  <script defer>
+    // preloader
+    window.addEventListener("load", function () {
+      const preloader = document.getElementById("preloader");
+      const loadBody = document.getElementById("header-home");
+      setTimeout(function () {
+        preloader.style.display = "none";
+        loadBody.style.display = "block";
+      }, 1500);
+    });
+    //flipper
     var words = ["Web Designer", "UI / UX DEV.", "Video Editor",];
     var currentIndex = 0;
     var textContainer = document.getElementById("textContainer");
@@ -257,7 +276,7 @@
 
     }
 
-    setInterval(flipText, 4000); // Flip the text every 2 seconds (2000 milliseconds)</script>
+    setInterval(flipText, 3000); // Flip the text every 3 seconds (3000 milliseconds)</script>
   <script src="./js/main.js"></script>
 </body>
 

@@ -29,17 +29,19 @@ img {
 }
 //preloader
 #preloader {
-  background: #fff;
+  background: linear-gradient(359deg, #ffffff 0%, #8080ff 100%);
   width: 100vw;
   height: 110vh;
   display: flex;
   justify-content: center;
   align-items: center;
   & #gif {
-    background-image: url(../img/status.gif);
+    background-image: url(../img/loading.gif);
+    background-size: 100px 100px;
+    background-color: inherit;
     background-repeat: no-repeat;
-    width: 10rem;
-    height: 1rem;
+    width: 7rem;
+    height: 7rem;
   }
 }
 //logo
@@ -58,9 +60,10 @@ img {
   justify-content: space-between;
   padding-top: 1rem;
   padding: 0 1rem;
-
   ul {
     display: flex;
+    z-index: 1000;
+    background: inherit;
   }
   li {
     padding: 1rem 1.5rem;
@@ -87,6 +90,7 @@ img {
   }
   p {
     margin: auto 0;
+    font-weight: 800;
   }
 }
 //header
@@ -96,9 +100,10 @@ img {
     color: #333;
     background-color: #fff;
     z-index: 10;
+    display: none;
+
     //header-container
     .header-container {
-      background-color: #ffffff;
       background-color: #ffffff;
       background-image: linear-gradient(359deg, #ffffff 0%, #8080ff 100%);
     }
@@ -113,7 +118,28 @@ img {
         padding-top: 20%;
         line-height: 1.3;
         width: 50vw;
-
+        height: 100vh;
+        .bottom-text {
+          position: relative;
+          top: -5rem;
+          bottom: 0;
+          left: 50vw;
+          z-index: 10000;
+          color: #fff;
+          font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+            "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+          ::before {
+            content: "";
+            display: block;
+            position: relative;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: 5rem;
+            height: 2px;
+            background-color: #fff;
+          }
+        }
         h1 {
           display: flex;
           flex-direction: column;
@@ -145,6 +171,54 @@ img {
         }
         p {
           padding-left: 1rem;
+        }
+        .social-icons-home {
+          background: inherit;
+          width: 2rem;
+          height: 13rem;
+          position: relative;
+          left: 95vw;
+          bottom: 10vw;
+          z-index: 10000;
+          & ul {
+            background: inherit;
+            display: flex;
+            flex-direction: column;
+            width: 2rem;
+            height: 13rem;
+            ::after {
+              content: "";
+              display: block;
+              position: relative;
+              top: -3.5rem;
+              bottom: 0;
+              left: 1rem;
+              width: 2px;
+              height: 100%;
+              background-color: #fff;
+              z-index: -1;
+            }
+            li {
+              width: 2rem;
+              height: 2rem;
+              margin: 0.3rem 0;
+
+              & a {
+                width: 2rem;
+                height: 2rem;
+
+                & img {
+                  width: 2rem;
+                  height: 2rem;
+                  border: 2px solid #fff;
+                  border-radius: 50%;
+                  &:hover {
+                    border: 2px solid $main-color;
+                  }
+                }
+              }
+            }
+          }
         }
       }
       .header-content-two {
