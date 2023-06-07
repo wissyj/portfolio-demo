@@ -126,6 +126,7 @@ input[class^=btn-]:hover {
 .first-btn {
   background-color: #ffbc00;
   border-radius: 10px;
+  transition: all 0.3s;
 }
 .first-btn:hover {
   border: 1px solid #333;
@@ -170,6 +171,52 @@ input[class^=btn-]:hover {
   #home-c .process {
     display: block;
   }
+  #header-home {
+    height: 10rem;
+    border-bottom: 2px solid #ffbc00;
+    background-image: url(../img/portfolio\ bg2.webp);
+    background-position: 100% top;
+  }
+  #header-home #main-nav {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+  #header-home #main-nav h3 {
+    color: #fff;
+  }
+  #header-home .header-container {
+    background: inherit;
+  }
+  #header-home .header-box {
+    display: none;
+  }
+  #header-inner {
+    height: 10rem;
+    border-bottom: 2px solid #ffbc00;
+    background-image: url(../img/portfolio\ bg2.webp);
+    background-position: 100% top;
+  }
+  #header-inner #main-nav {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+  #header-inner #main-nav h3 {
+    color: #fff;
+  }
+  #work-a .work-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .work-box {
+    margin: 1rem;
+  }
   footer {
     display: block;
     text-align: center;
@@ -178,44 +225,8 @@ input[class^=btn-]:hover {
     justify-content: center;
   }
 }
-@media (max-width: 500px) {
-  #header-home {
-    height: 10rem;
-    border-bottom: 2px solid #ffbc00;
-    background-position: 30% 20%/cover;
-  }
-  #header-home #main-nav {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-  }
-  #header-home #main-nav .logo {
-    margin-top: 0.5rem;
-    left: 45%;
-  }
-  #header-home .header-container {
-    background-color: #ffffff;
-    background-color: #ffffff;
-    background-image: linear-gradient(359deg, #ffffff 0%, #8080ff 100%);
-  }
-  #header-home .header-box {
-    display: block;
-    margin-top: 0;
-  }
-  #header-home .header-box .header-content {
-    height: 50vh;
-    width: 100vw;
-    background-color: #514848;
-  }
-  #header-home .header-box .header-content h1 {
-    font-size: 1.5rem;
-  }
-  #header-home .header-box .header-content h1 span {
-    height: inherit;
-    font-size: 2rem;
-  }
-  #header-home .header-box .header-content-two {
-    display: none;
+@media (max-width: 450px) {
+  #main-nav ul li {
+    padding: 1rem 0.5rem;
   }
 }

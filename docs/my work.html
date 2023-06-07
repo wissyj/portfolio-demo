@@ -18,6 +18,9 @@
 </head>
 
 <body>
+  <div id="preloader">
+    <div id="gif"></div>
+  </div>
   <header id="header-inner">
     <div id="container">
       <nav id="main-nav" role="navigation">
@@ -45,7 +48,7 @@
       <div class="work-container py-2">
         <div class="work-box">
           <div class="work-box-image">
-            <img src="./img/items/item1.png" alt="UI/UX Designs">
+            <img src="./img/items/item1.avif" alt="UI/UX Designs">
           </div>
           <div class="work-box-text">
             <div class="work-box-text-wrap">
@@ -58,7 +61,7 @@
         </div>
         <div class="work-box">
           <div class="work-box-image">
-            <img src="./img/items/item2.png" alt="UI/UX Designs">
+            <img src="./img/items/item2.avif" alt="UI/UX Designs">
           </div>
           <div class="work-box-text">
             <div class="work-box-text-wrap">
@@ -71,7 +74,7 @@
         </div>
         <div class="work-box">
           <div class="work-box-image">
-            <img src="./img/items/item3.png" alt="UI/UX Designs">
+            <img src="./img/items/item3.avif" alt="UI/UX Designs">
           </div>
           <div class="work-box-text">
             <div class="work-box-text-wrap">
@@ -84,7 +87,7 @@
         </div>
         <div class="work-box">
           <div class="work-box-image">
-            <img src="./img/items/item4.png" alt="UI/UX Designs">
+            <img src="./img/items/item4.avif" alt="UI/UX Designs">
           </div>
           <div class="work-box-text">
             <div class="work-box-text-wrap">
@@ -97,7 +100,7 @@
         </div>
         <div class="work-box">
           <div class="work-box-image">
-            <img src="./img/items/item5.png" alt="UI/UX Designs">
+            <img src="./img/items/item5.avif" alt="UI/UX Designs">
           </div>
           <div class="work-box-text">
             <div class="work-box-text-wrap">
@@ -110,7 +113,7 @@
         </div>
         <div class="work-box">
           <div class="work-box-image">
-            <img src="./img/items/item6.png" alt="UI/UX Designs">
+            <img src="./img/items/item6.avif" alt="UI/UX Designs">
           </div>
           <div class="work-box-text">
             <div class="work-box-text-wrap">
@@ -129,17 +132,32 @@
       </div>
       <div class="footer-right">
         <div class="footer-icons">
-          <a href="http://facebook.com" target="_blank" rel="noopener noreferrer"><img src="./img/facebook.png"
+          <a href="http://facebook.com" target="_blank" rel="noopener noreferrer"><img src="./img/facebook.avif"
               alt="facebook logo"></a>
-          <a href="http://whatsapp.com" target="_blank" rel="noopener noreferrer"><img src="./img/whatsapp.png"
+          <a href="http://whatsapp.com" target="_blank" rel="noopener noreferrer"><img src="./img/whatsapp.avif"
               alt="whatsapplogo"></a>
-          <a href="http://twitter.com" target="_blank" rel="noopener noreferrer"><img src="./img/twitter.png"
+          <a href="http://twitter.com" target="_blank" rel="noopener noreferrer"><img src="./img/twitter.avif"
               alt="twitter logo"></a>
-          <a href="http://instagram.com" target="_blank" rel="noopener noreferrer"><img src="./img/instagram.png"
-              alt=""></a>
+          <a href="http://instagram.com" target="_blank" rel="noopener noreferrer"><img src="./img/instagram.avif"
+              alt="instagram logo"></a>
+          <a href="http://linkedin.com" target="_blank" rel="noopener noreferrer"><img src="./img/likedin2.avif"
+              alt="logo of likedin"></a>
+          <a href="http://dribble.com" target="_blank" rel="noopener noreferrer"><img src="./img/dribble.avif"
+              alt="dribble logo"></a>
         </div>
       </div>
     </footer>
+    <script>
+      // preloader
+      window.addEventListener("load", function () {
+        const preloader = document.getElementById("preloader");
+        const loadBody = document.getElementById("header-inner");
+        setTimeout(function () {
+          preloader.style.display = "none";
+          loadBody.style.display = "block";
+        }, 1500);
+      });
+    </script>
 </body>
 
 </html>
