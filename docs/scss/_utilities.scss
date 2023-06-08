@@ -36,6 +36,25 @@ a[class^="btn-"]:hover,
 input[class^="btn-"]:hover {
   background-color: $main-color;
 }
+//backgrounds
+.bg {
+  &-main {
+    background: $main-color;
+    color: $dark-color;
+  }
+  &-light {
+    background: $light-color;
+    color: set-text-color($light-color);
+  }
+  &-dark {
+    background: $dark-color;
+    color: $light-color;
+  }
+  &-medium {
+    background: $medium-color;
+    color: $dark-color;
+  }
+}
 .increase {
   font-size: 1.3rem;
   padding-bottom: 1rem;
@@ -56,7 +75,7 @@ input[class^="btn-"]:hover {
 }
 .hidden {
   opacity: 0;
-  filter: blur(7px);
+  filter: blur(5px);
   transform: translateY(100%);
   transition: all 0.5s;
 }
@@ -68,7 +87,7 @@ input[class^="btn-"]:hover {
 /* animation to make things fade in from left */
 .hidden2 {
   opacity: 0;
-  filter: blur(7px);
+  filter: blur(5px);
   transform: translateX(-100%);
   transition: all 0.3s;
 }

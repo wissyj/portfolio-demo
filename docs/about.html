@@ -5,10 +5,8 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tech Wissy | Portfolio</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Tech Wissy | Portfolio - About Me</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@500&display=swap" rel="stylesheet" />
@@ -18,41 +16,203 @@
 </head>
 
 <body>
-  <!-- header inner -->
+  <div id="preloader">
+    <div id="gif"></div>
+  </div>
   <header id="header-inner">
     <div id="container">
-      <nav id="main-nav">
-        <h3 class="py-5">
-          <span class="logo-a logo">T</span>
-          <span class="logo-b logo">W</span>
+      <nav id="main-nav" role="navigation">
+        <h3 class="py-5 ">
+          <div class="logo" alt="logo image"></div>
+          <p>Tech Wissy</p>
         </h3>
         <ul>
-          <li><a href="./index.html" class="current">Home</a></li>
-          <li><a href="./about.html">About</a></li>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./about.html" class="current">About</a></li>
           <li><a href="./my work.html">My Work</a></li>
           <li><a href="./contact.html">Contact me</a></li>
         </ul>
       </nav>
     </div>
   </header>
+  <!-- Section A:Info -->
+  <div id="about-info" class="text-center py-2 ">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <div class="underline"></div>
+      <p class="increase">Let's Discuss More...</p>
+      <div class="about-box">
+        <img src="img/about.webp" alt="My photo" class="bio-image">
+        <div class="bio bg-light">
+          <h4 class="section-title">Web Designs Created with Care</h4>
+          <!-- check gpt for a better caption for the header above -->
+          <p class="bio-info">Welcome to my portfolio, where authentic and innovative web designs come to life. With a
+            passion for crafting tailored solutions, I exceed expectations, delivering engaging and inspiring designs
+            that drive results, and help you establish a strong online presence that leaves a lasting impression.</p>
+          <!-- find a better text from gpt -->
+        </div>
+        <div class="award-1 hidden2 ">
+          <img loading="lazy" loading="lazy" src="img/pngtree-awards-png-image_1448359.avif"
+            alt="Modern designers' award">
+          <h3>Modern Designers' Award</h3>
+        </div>
+        <div class="award-2 hidden2 trans-1">
+          <img loading="lazy" src="img/glass-trophy-acrylic-winner-award-realistic_107791-205.avif"
+            alt="Tech for the young award">
+          <h3>Tech for the Young Initiative Award</h3>
+        </div>
+        <div class="award-3 hidden2 trans-2">
+          <img loading="lazy" src="./img/download.avif" alt="Young creative award">
+          <h3>Young Creative Award</h3>
+        </div>
+      </div>
+    </div>
+    <!-- section B: My skills -->
+    <div id="about-skills" class="text-center py-2 bg-dark my-1">
+      <div class="container ">
+        <h2 class="section-title">My Skills</h2>
+        <div class="underline"></div>
+        <div class="skill-box hidden">
+          <h3> HTML AND CSS :</h3>
+          <div class="progress-bar">
+            <div style=" width: 100%;"></div>
+          </div>
+        </div>
+        <div class="skill-box hidden">
+          <h3> WordPress :</h3>
+          <div class="progress-bar">
+            <div style=" width: 80%;"></div>
+          </div>
+        </div>
+        <div class="skill-box hidden">
+          <h3> MATERIAL UI :</h3>
+          <div class="progress-bar">
+            <div style=" width: 90%;"></div>
+          </div>
+        </div>
+        <div class="skill-box hidden">
+          <h3> CAPCUT :</h3>
+          <div class="progress-bar">
+            <div style=" width: 70%;"></div>
+          </div>
+        </div>
+        <div class="skill-box hidden">
+          <h3> BOOTSTRAP :</h3>
+          <div class="progress-bar">
+            <div style=" width: 100%;"></div>
+          </div>
+        </div>
+        <div class="skill-box hidden">
+          <h3> JAVASCRIPT :</h3>
+          <div class="progress-bar">
+            <div style=" width: 50%;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- section C: Logo -->
+    <div id="logo-sections">
+      <div class="logo-box hidden">
+        <img loading="lazy" src="img/about-logos/logo-envato.avif" alt="Envato Logo">
+      </div>
+      <div class="logo-box hidden">
+        <img loading="lazy" src="img/about-logos/logo-woocommerce.avif" alt="logo-woocommerce ">
+      </div>
+      <div class="logo-box hidden">
+        <img loading="lazy" src="img/about-logos/logo-magento.avif" alt="logo-magento">
+      </div>
+      <div class="logo-box hidden">
+        <img loading="lazy" src="img/about-logos/logo-wordpress.avif" alt="logo-wordpress">
+      </div>
+    </div>
+    <!-- Section D: Testimonials -->
+    <div id="testimonial-container" class="text-center py-2 ">
+      <div class="container">
+        <h2 class="section-title">Testimonials</h2>
+        <div class="underline"></div>
+        <p class="increase">Let's Hear from my Clients...</p>
+        <div class="testimonial-container">
+          <!-- get real reviews from gpt and real customer names -->
+          <div class="testimonial-box hidden2 ">
+            <div class="testimonial-text bg-dark">
+              <p>The web design work delivered by <strong> Tech Wissy</strong> was outstanding! Their attention to
+                detail and ability to capture our brand essence exceeded our expectations. Highly recommended for a
+                professional online presence.</p>
+            </div>
+            <div class="testimonial-bio hidden2">
+              <img loading="lazy" src="img/testimonials/person1.webp" alt="John's image" class="testimonial-image">
+              <div class="testimonial-info">John James, USA.</div>
+            </div>
+          </div>
+          <div class="testimonial-box hidden2 trans-1">
+            <div class="testimonial-text bg-dark">
+              <p>Working with <strong> Tech Wissy</strong> was a pleasure. Their creativity and expertise in web design
+                resulted in a stunning website that perfectly represents our business. Truly impressed with the outcome!
+              </p>
+            </div>
+            <div class="testimonial-bio hidden2 trans-1">
+              <img loading="lazy" src="img/testimonials/person2.webp" alt="John's image" class="testimonial-image">
+              <div class="testimonial-info">Okoro Ifeoma, Nigeria.</div>
+            </div>
+          </div>
+          <div class="testimonial-box hidden2 trans-2">
+            <div class="testimonial-text bg-dark">
+              <p>Impressive web design skills! <strong> Tech Wissy</strong> understood our vision and transformed it
+                into a visually appealing and user-friendly website. Their professionalism and dedication to quality are
+                commendable.</p>
+            </div>
+            <div class="testimonial-bio hidden2 trans-2">
+              <img loading="lazy" src="img/testimonials/person3.webp" alt="John's image" class="testimonial-image">
+              <div class="testimonial-info">Kwame Mensah, Ghana.</div>
+            </div>
+          </div>
+          <div class="testimonial-box hidden2 trans-3">
+            <div class="testimonial-text bg-dark">
+              <p>We are thrilled with the web design services provided by <strong> Tech Wissy</strong> . They listened
+                to our requirements, implemented our ideas flawlessly, and delivered a website that showcases our brand
+                beautifully. Fantastic job!</p>
+            </div>
+            <div class="testimonial-bio hidden2 trans-3">
+              <img loading="lazy" src="img/testimonials/person4.webp" alt="John's image" class="testimonial-image">
+              <div class="testimonial-info">Ibrahim Adekunle, Nigeria.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <footer class="container">
     <div class="footer-left">
       Copyright <span>&copy;</span> Tech Wissy 2023. All Rights Reserved
     </div>
     <div class="footer-right">
       <div class="footer-icons">
-        <a href="http://facebook.com" target="_blank" rel="noopener noreferrer"><img src="./img/facebook.avif"
-            alt="facebook logo"></a>
-        <a href="http://whatsapp.com" target="_blank" rel="noopener noreferrer"><img src="./img/whatsapp.avif"
-            alt="whatsapplogo"></a>
-        <a href="http://twitter.com" target="_blank" rel="noopener noreferrer"><img src="./img/twitter.avif"
-            alt="twitter logo"></a>
-        <a href="http://instagram.com" target="_blank" rel="noopener noreferrer"><img src="./img/instagram.avif"
-            alt=""></a>
+        <a href="http://facebook.com" target="_blank" rel="noopener noreferrer"><img loading="lazy"
+            src="./img/facebook.avif" alt="facebook logo"></a>
+        <a href="http://whatsapp.com" target="_blank" rel="noopener noreferrer"><img loading="lazy"
+            src="./img/whatsapp.avif" alt="whatsapplogo"></a>
+        <a href="http://twitter.com" target="_blank" rel="noopener noreferrer"><img loading="lazy"
+            src="./img/twitter.avif" alt="twitter logo"></a>
+        <a href="http://instagram.com" target="_blank" rel="noopener noreferrer"><img loading="lazy"
+            src="./img/instagram.avif" alt=""></a>
+        <a href="http://linkedin.com" target="_blank" rel="noopener noreferrer"><img loading="lazy"
+            src="./img/linkedin2.avif" alt="logo of linkedin"></a>
+        <a href="http://dribble.com" target="_blank" rel="noopener noreferrer"><img loading="lazy"
+            src="./img/dribble.avif" alt="dribble logo"></a>
       </div>
     </div>
   </footer>
-  <!-- <script src="./js/main.js"></script> -->
+  <script>
+    // preloader
+    window.addEventListener("load", function () {
+      const preloader = document.getElementById("preloader");
+      const loadBody = document.getElementById("header-inner");
+      setTimeout(function () {
+        preloader.style.display = "none";
+        loadBody.style.display = "block";
+      }, 1500);
+    });</script>
+  <script src="js/main.js"></script>
 </body>
 
 </html>
