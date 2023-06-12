@@ -121,13 +121,15 @@ input[class^=btn-]:hover {
 
 .hidden3 {
   opacity: 0;
-  transform: translateY(-50px);
-  transition: opacity 0.5s, transform 0.5s;
+  filter: blur(5px);
+  transform: translateY(-100%);
+  transition: all 0.3s;
 }
 
 .show3 {
   opacity: 1;
-  transform: translateY(0);
+  filter: blur(0px);
+  transform: translateY(0px);
 }
 
 .trans-1 {
@@ -202,9 +204,6 @@ input[class^=btn-]:hover {
     display: contents;
     align-items: center;
   }
-  .slide {
-    text-align: center;
-  }
   .img-slider {
     position: relative;
     width: 100vw;
@@ -225,12 +224,14 @@ input[class^=btn-]:hover {
     display: none;
     transition: all 0.3s;
     padding: 0 0.5rem;
+    text-align: center;
   }
   .img-slider .slide.active {
     display: block;
   }
   .img-slider .slide h2 {
     font-size: 1.5rem;
+    transition: all 0.3s;
   }
   .img-slider .slide p {
     line-height: 1.2;
@@ -239,6 +240,7 @@ input[class^=btn-]:hover {
   }
   .img-slider .slide a {
     transition-delay: 450ms;
+    font-size: 1.2rem;
   }
   .img-slider .navigation {
     z-index: 2;
@@ -261,7 +263,7 @@ input[class^=btn-]:hover {
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
   }
   #header-home {
-    height: 12rem;
+    height: 13rem;
     border-bottom: 2px solid #ffbc00;
     background-image: url(../img/portfolio\ bg2.webp);
     background-position: 100% top;
@@ -282,7 +284,7 @@ input[class^=btn-]:hover {
     display: none;
   }
   #header-inner {
-    height: 12rem;
+    height: 13rem;
     border-bottom: 2px solid #ffbc00;
     background-image: url(../img/portfolio\ bg2.webp);
     background-position: top right;

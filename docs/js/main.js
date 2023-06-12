@@ -13,15 +13,15 @@ const observer = new IntersectionObserver((e) => {
           ? (e.target.classList.add("show"),
             e.target.classList.add("show2"),
             e.target.classList.add("show3"),
-            observer.unobserve(e.target))
+            observer.observe(e.target))
           : (e.target.classList.remove("show"),
             e.target.classList.remove("show2"),
             e.target.classList.remove("show3"));
     });
   }),
   hidden = document.querySelectorAll(".hidden"),
-  hidden2 = document.querySelectorAll(".hidden2"),
-  hidden3 = document.querySelectorAll(".hidden3");
+  hidden2 = document.querySelectorAll(".hidden2");
+hidden3 = document.querySelectorAll(".hidden3");
 
 hidden.forEach((e) => observer.observe(e)),
   hidden2.forEach((e) => observer.observe(e)),

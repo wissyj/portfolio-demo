@@ -43,9 +43,7 @@
     display: contents;
     align-items: center;
   }
-  .slide {
-    text-align: center;
-  }
+
   .img-slider {
     position: relative;
     width: 100vw;
@@ -67,6 +65,7 @@
     display: none;
     transition: all 0.3s;
     padding: 0 0.5rem;
+    text-align: center;
   }
 
   .img-slider .slide.active {
@@ -74,6 +73,7 @@
   }
   .img-slider .slide h2 {
     font-size: 1.5rem;
+    transition: all 0.3s;
   }
   .img-slider .slide p {
     line-height: 1.2;
@@ -83,6 +83,7 @@
 
   .img-slider .slide a {
     transition-delay: 450ms;
+    font-size: 1.2rem;
   }
 
   .img-slider .navigation {
@@ -110,7 +111,7 @@
 
   #header {
     &-home {
-      height: 12rem;
+      height: 13rem;
       border-bottom: 2px solid $main-color;
       background-image: $bg-image;
       background-position: 100% top;
@@ -132,7 +133,7 @@
       }
     }
     &-inner {
-      height: 12rem;
+      height: 13rem;
       border-bottom: 2px solid $main-color;
       background-image: $bg-image;
       background-position: top right;

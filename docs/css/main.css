@@ -121,13 +121,15 @@ input[class^=btn-]:hover {
 
 .hidden3 {
   opacity: 0;
-  transform: translateY(-50px);
-  transition: opacity 0.5s, transform 0.5s;
+  filter: blur(5px);
+  transform: translateY(-100%);
+  transition: all 0.3s;
 }
 
 .show3 {
   opacity: 1;
-  transform: translateY(0);
+  filter: blur(0px);
+  transform: translateY(0px);
 }
 
 .trans-1 {

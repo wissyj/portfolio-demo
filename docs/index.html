@@ -86,34 +86,34 @@
       </div>
     </div>
   </header>
-  <!-- ======= Hero Section ======= -->
+  <!-- ======= Hero Section for mobile only(720px)======= -->
   <section id="hero">
     <div class="img-slider">
       <div class="slide active">
         <h2 class="hidden3">Welcome to <span>Tech Wissy</span></h2>
         <p class="hidden trans-2">Welcome to Tech Wissy, where technology meets expertise. Let's embark on this
           tech-savvy journey together!</p>
-        <a href="./about.html" class="btn-dark hidden ">Read More</a>
+        <a href="./about.html" class="btn-dark hidden ">My Work</a>
       </div>
       <div class="slide">
         <h2 class="hidden3">I am a Web Developer</h2>
         <p class="hidden trans-2">Turning ideas into dynamic websites with clean code. Welcome to the realm of web
           development!</p>
-        <a href="./about.html" class="btn-dark hidden ">Read More</a>
+        <a href="./about.html" class="btn-dark hidden ">My Work</a>
       </div>
       <div class="slide">
         <h2 class="hidden3">I am a UI/UX Designer</h2>
         <p class="hidden trans-2"> Crafting delightful user experiences through intuitive design. Let's shape the
           digital world together.
         </p>
-        <a href="./about.html" class="btn-dark hidden ">Read More</a>
+        <a href="./about.html" class="btn-dark hidden ">My Work</a>
       </div>
       <div class="slide">
         <h2 class="hidden3">I am a Video Editor</h2>
         <p class="hidden trans-2"> Crafting delightful user experiences through intuitive design. Let's shape the
           digital world together.
         </p>
-        <a href="./about.html" class="btn-dark hidden ">Read More</a>
+        <a href="./about.html" class="btn-dark hidden ">My Work</a>
       </div>
 
     </div>
@@ -229,14 +229,14 @@
   </section>
   <section id="home-c" class="text-center py-2">
     <div class="container">
-      <h2 class="section-title">My Creative Process</h2>
+      <h2 class="section-title hidden">My Creative Process</h2>
       <div class="underline"></div>
-      <p class="increase">
+      <p class="increase hidden">
         All of my works are based off on constant practice and the desire to
         satisfy YOU, my dear client.
       </p>
       <div class="process">
-        <div>
+        <div class="hidden2">
           <i class="fas fa-file-alt fa-4x process-icon my-2">
             <div class="process-step">1</div>
           </i>
@@ -246,7 +246,7 @@
             design outcomes.
           </p>
         </div>
-        <div class="trans-2 hidden2">
+        <div class="trans-1 hidden2">
           <i class="fas fa-regular fa-laptop-code fa-4x process-icon my-2">
             <div class="process-step">2</div>
           </i>
@@ -256,7 +256,7 @@
             unique web design solutions.
           </p>
         </div>
-        <div class="trans-3 hidden2">
+        <div class="trans-2 hidden2">
           <i class="fas fa-object-ungroup fa-4x process-icon my-2">
             <div class="process-step">3</div>
           </i>
@@ -266,7 +266,7 @@
             project management for web design endeavors.
           </p>
         </div>
-        <div class="trans-4 hidden2">
+        <div class="trans-3 hidden2">
           <i class="fas fa-thumbs-up fa-4x process-icon my-2">
             <div class="process-step">4</div>
           </i>
@@ -318,71 +318,30 @@
       currentIndex = (currentIndex + 1) % words.length;
     } setInterval(flipText, 3000); //
     //  Flip the text every 3 seconds (3000 milliseconds)
-    // slides
-    // const img = document.querySelectorAll(".slide img");
-    // var slides = document.querySelectorAll(".slide"),
-    //   btns = document.querySelectorAll(".btn");
-    // let currentSlide = 1;
-    // var manualNav = function (e) {
-    //   slides.forEach((e) => {
-    //     e.classList.remove("active"),
-    //       btns.forEach((e) => {
-    //         e.classList.remove("active");
-    //       });
-    //   }),
-    //     slides[e].classList.add("active"),
-    //     btns[e].classList.add("active");
-    // };
-    // btns.forEach((e, t) => {
-    //   e.addEventListener("click", () => {
-    //     manualNav(t), (currentSlide = t);
-    //   });
-    // });
-    // var repeat = function (e) {
-    //   let t = document.getElementsByClassName("active"),
-    //     n = 1;
-    //   var s = () => {
-    //     setTimeout(function () {
-    //       [...t].forEach((e) => {
-    //         e.classList.remove("active");
-    //       }),
-    //         slides[n].classList.add("active"),
-    //         btns[n].classList.add("active"),
-    //         n++,
-    //         slides.length == n && (n = 0),
-    //         n >= slides.length || s();
-    //     }, 35e2);
-    //   };
-    //   s();
-    // };
-    // repeat();
-    var images = document.querySelectorAll('.slide');
-    var currentImageIndex = 0;
-    function showImage(index) {
-      // Hide all images
-      for (var i = 0; i < images.length; i++) {
-        images[i].classList.remove('active');
-      }
-      // Show the image at the specified index
-      images[index].classList.add('active');
-    }
-    function playCarousel() {
-      showImage(currentImageIndex);
-      // Increment the image index
-      currentImageIndex++;
-      // Reset index to 0 when reaching the end
-      if (currentImageIndex >= images.length) {
-        currentImageIndex = 0;
-      }
-    }
-    // Start the carousel and set interval for automatic play
-    var interval = setInterval(playCarousel, 3000); // Change image every 3 seconds
 
+    function autoSlide() {
+      const slides = document.querySelectorAll('.slide');
+      let currentSlide = 0;
 
+      function showSlide() {
+        slides.forEach((slide, index) => {
+          if (index === currentSlide) {
+            slide.classList.add('active');
+          } else {
+            slide.classList.remove('active');
+          }
+        });
+
+        currentSlide = (currentSlide + 1) % slides.length;
+      }
+
+      showSlide(); // Show initial slide
+      setInterval(showSlide, 4000); // Repeat every 4 seconds
+    }
+    autoSlide();
   </script>
   <script src="./js/main.js"></script>
 
 </body>
-<!-- check in gpt, how to make a function that watches for a particular class called hidden3 in an element . It will remove the hidden3 and add show3 -->
 
 </html>
