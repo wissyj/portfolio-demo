@@ -1,3 +1,4 @@
+// other utilities
 .container {
   max-width: $website-width;
   margin: 0 auto;
@@ -6,6 +7,41 @@
   line-height: 1.7;
 }
 
+.increase {
+  font-size: 1.3rem;
+  padding-bottom: 1rem;
+}
+.text-center {
+  text-align: center;
+}
+.underline {
+  width: 4rem;
+  height: 3px;
+  background: $main-color;
+  display: block;
+  margin: 0 auto 1rem auto;
+}
+.section-title {
+  font-size: 2rem;
+  font-weight: 100;
+}
+.swiper {
+  width: 600px;
+  height: 300px;
+}
+#main-nav > a:last-child {
+  border-radius: 20px;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  background: $main-color;
+  color: $dark-color;
+  font-size: 1.2rem;
+  font-weight: bold;
+  z-index: 9999;
+  &:hover {
+    border-bottom: none;
+  }
+}
 //buttons styling
 %btn-shared {
   display: inline-block;
@@ -55,24 +91,9 @@ input[class^="btn-"]:hover {
     color: $dark-color;
   }
 }
-.increase {
-  font-size: 1.3rem;
-  padding-bottom: 1rem;
-}
-.text-center {
-  text-align: center;
-}
-.underline {
-  width: 4rem;
-  height: 3px;
-  background: $main-color;
-  display: block;
-  margin: 0 auto 1rem auto;
-}
-.section-title {
-  font-size: 2rem;
-  font-weight: 100;
-}
+// end
+
+/* animation to make things fade in from bottom */
 .hidden {
   opacity: 0;
   filter: blur(5px);
@@ -84,6 +105,7 @@ input[class^="btn-"]:hover {
   filter: blur(0px);
   transform: translateY(0px);
 }
+// end
 /* animation to make things fade in from left */
 .hidden2 {
   opacity: 0;
@@ -96,6 +118,8 @@ input[class^="btn-"]:hover {
   filter: blur(0px);
   transform: translateX(0px);
 }
+// end
+// transition delays
 .trans-1 {
   transition-delay: 200ms;
 }
@@ -105,6 +129,7 @@ input[class^="btn-"]:hover {
 .trans-3 {
   transition-delay: 600ms;
 }
+// end
 //padding
 .py {
   &-5 {

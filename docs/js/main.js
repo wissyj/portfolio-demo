@@ -1,3 +1,10 @@
+// preloader
+window.addEventListener("load", function () {
+  const preloader = document.getElementById("preloader");
+  setTimeout(function () {
+    preloader.style.display = "none";
+  }, 1500);
+});
 //intersection observer begins
 const observer = new IntersectionObserver((e) => {
     e.forEach((e) => {
@@ -9,10 +16,10 @@ const observer = new IntersectionObserver((e) => {
           : (e.target.classList.remove("show"),
             e.target.classList.remove("show2"));
     });
-    var options = { rootMargin: "50%", threshold: 1 };
   }),
   hidden = document.querySelectorAll(".hidden"),
   hidden2 = document.querySelectorAll(".hidden2");
 hidden.forEach((e) => observer.observe(e)),
   hidden2.forEach((e) => observer.observe(e));
+
 //intersection observer ends

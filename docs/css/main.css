@@ -6,6 +6,47 @@
   line-height: 1.7;
 }
 
+.increase {
+  font-size: 1.3rem;
+  padding-bottom: 1rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.underline {
+  width: 4rem;
+  height: 3px;
+  background: #ffbc00;
+  display: block;
+  margin: 0 auto 1rem auto;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 100;
+}
+
+.swiper {
+  width: 600px;
+  height: 300px;
+}
+
+#main-nav > a:last-child {
+  border-radius: 20px;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  background: #ffbc00;
+  color: #333;
+  font-size: 1.2rem;
+  font-weight: bold;
+  z-index: 9999;
+}
+#main-nav > a:last-child:hover {
+  border-bottom: none;
+}
+
 .btn-dark, .btn-light, .btn-main {
   display: inline-block;
   padding: 0.8rem 2rem;
@@ -50,28 +91,7 @@ input[class^=btn-]:hover {
   color: #333;
 }
 
-.increase {
-  font-size: 1.3rem;
-  padding-bottom: 1rem;
-}
-
-.text-center {
-  text-align: center;
-}
-
-.underline {
-  width: 4rem;
-  height: 3px;
-  background: #ffbc00;
-  display: block;
-  margin: 0 auto 1rem auto;
-}
-
-.section-title {
-  font-size: 2rem;
-  font-weight: 100;
-}
-
+/* animation to make things fade in from bottom */
 .hidden {
   opacity: 0;
   filter: blur(5px);
@@ -185,7 +205,7 @@ img {
   overflow: hidden;
   transition: all 0.4s linear;
   opacity: 1;
-  z-index: 99999;
+  z-index: 99999999;
 }
 #preloader #gif {
   background-image: url(../img/initial-letter-tw-logo-design-template-linked-vector-29965859.webp);
@@ -194,6 +214,25 @@ img {
   background-repeat: no-repeat;
   width: 11rem;
   height: 11rem;
+}
+
+#top {
+  position: fixed;
+  width: 2rem;
+  aspect-ratio: 1;
+  background: #f4f4f4;
+  display: flex;
+  justify-content: right;
+  top: 70vh;
+  left: 85vw;
+  z-index: 1000;
+  border-radius: 5px;
+  border: 1px solid #333;
+}
+#top svg {
+  width: 2rem;
+  aspect-ratio: 1;
+  fill: #333;
 }
 
 .logo {
@@ -388,10 +427,18 @@ img {
   height: 8rem;
 }
 #header-inner {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 999999;
   height: 5rem;
   background: url(../img/portfolio\ bg2.webp) no-repeat 50% 10%/cover;
   color: #fff;
   border-bottom: 2px solid #ffbc00;
+}
+
+#hero {
+  display: none;
 }
 
 #home-a .specials {
@@ -551,6 +598,7 @@ img {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 0.5rem;
+  grid-auto-flow: column;
 }
 .testimonial-container .testimonial-box .testimonial-text {
   width: 15rem;

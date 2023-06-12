@@ -43,7 +43,7 @@ img {
   overflow: hidden;
   transition: all 0.4s linear;
   opacity: 1;
-  z-index: 99999;
+  z-index: 99999999;
   & #gif {
     background-image: url(../img/initial-letter-tw-logo-design-template-linked-vector-29965859.webp);
     background-size: 200px 200px;
@@ -53,7 +53,25 @@ img {
     height: 11rem;
   }
 }
-
+// scroll to top
+#top {
+  position: fixed;
+  width: 2rem;
+  aspect-ratio: 1;
+  background: $light-color;
+  display: flex;
+  justify-content: right;
+  top: 70vh;
+  left: 85vw;
+  z-index: 1000;
+  border-radius: 5px;
+  border: 1px solid $dark-color;
+  & svg {
+    width: 2rem;
+    aspect-ratio: 1;
+    fill: $dark-color;
+  }
+}
 //logo
 .logo {
   width: 3rem;
@@ -92,6 +110,7 @@ img {
       border-bottom: 3px solid $main-color;
     }
   }
+
   h3 {
     display: flex;
     width: fit-content;
@@ -255,11 +274,19 @@ img {
     }
   }
   &-inner {
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 999999;
     height: 5rem;
     background: $bg-image no-repeat 50% 10% / cover;
     color: #fff;
     border-bottom: 2px solid $main-color;
   }
+}
+// silder
+#hero{
+  display: none;
 }
 #home {
   &-a {
@@ -438,7 +465,7 @@ img {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 0.5rem;
-
+  grid-auto-flow: column;
   .testimonial-box {
     .testimonial-text {
       width: 15rem;

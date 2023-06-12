@@ -13,8 +13,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@500&display=swap" rel="stylesheet" />
   <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+  <link href="img/initial-letter-tw-logo-design-template-linked-vector-29965859.webp" rel="apple-touch-icon">
+
   <link rel="stylesheet" href="./css/main.css" />
   <link rel="stylesheet" href="./css/mobile.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+
 </head>
 <!-- create readme.md file -->
 
@@ -25,17 +30,18 @@
   <header id="header-home">
     <div id="container">
       <div class="header-container">
-        <nav id="main-nav">
+        <nav id="main-nav" role="navigation">
           <h3 class="py-5 ">
-            <div class="logo" alt="logo image of tech wissy"></div>
+            <div class="logo" alt="logo image"></div>
             <p>Tech Wissy</p>
           </h3>
           <ul>
             <li><a href="./index.html" class="current">Home</a></li>
             <li><a href="./about.html">About</a></li>
             <li><a href="./my work.html">My Work</a></li>
-            <li><a href="./contact.html">Contact me</a></li>
           </ul>
+          <a id="contact-btn" class="contact-btn " href="./contact.html">Contact me</a>
+
         </nav>
         <div class="header-box">
 
@@ -77,11 +83,39 @@
       </div>
     </div>
   </header>
-  <section id="home-a" class="text-center py-2">
-    <div class="container">
-      <h2 class="section-title">I specialize in</h2>
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+    <div class="img-slider">
+      <div class="slide active">
+        <h2 class="">Welcome to <span>Tech Wissy</span></h2>
+        <p class="hidden trans-2">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et
+          est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut.</p>
+        <a href="#about" class="btn-dark hidden ">Read More</a>
+      </div>
+      <div class="slide">
+        <h2 class="">I am a Web Developer</h2>
+        <p class="hidden trans-2">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et
+          est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut.</p>
+        <a href="#about" class="btn-dark hidden ">Read More</a>
+      </div>
+      <div class="slide">
+        <h2 class="">I am a UI/UX Designer</h2>
+        <p class="hidden trans-2">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et
+          est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut.</p>
+        <a href="#about" class="btn-dark hidden ">Read More</a>
+      </div>
+      <div class="navigation">
+        <div class="btn active"></div>
+        <div class="btn"></div>
+        <div class="btn"></div>
+      </div>
+    </div>
+  </section><!-- End Hero -->
+  <section id="home-a" class="text-center py-2 ">
+    <div class="container ">
+      <h2 class="section-title hidden">I specialize in</h2>
       <div class="underline"></div>
-      <p class="increase">
+      <p class="increase hidden">
         Video editing as well as exquisite designs for websites and mobile
         applications.
       </p>
@@ -267,15 +301,6 @@
 
   </footer>
   <script defer>
-    // preloader
-    window.addEventListener("load", function () {
-      const preloader = document.getElementById("preloader");
-      const loadBody = document.getElementById("header-home");
-      setTimeout(function () {
-        preloader.style.display = "none";
-        loadBody.style.display = "block";
-      }, 1500);
-    });
     //flipper
     var words = ["Web Designer", "UI / UX DEV.", "Video Editor",];
     var currentIndex = 0;
@@ -284,11 +309,49 @@
     function flipText() {
       textContainer.textContent = words[currentIndex];
       currentIndex = (currentIndex + 1) % words.length;
-
-    }
-
-    setInterval(flipText, 3000); // Flip the text every 3 seconds (3000 milliseconds)</script>
+      repeat();
+    } setInterval(flipText, 3000); // Flip the text every 3 seconds (3000 milliseconds)
+    // slides
+    const img = document.querySelectorAll(".slide img");
+    var slides = document.querySelectorAll(".slide"),
+      btns = document.querySelectorAll(".btn");
+    let currentSlide = 1;
+    var manualNav = function (e) {
+      slides.forEach((e) => {
+        e.classList.remove("active"),
+          btns.forEach((e) => {
+            e.classList.remove("active");
+          });
+      }),
+        slides[e].classList.add("active"),
+        btns[e].classList.add("active");
+    };
+    btns.forEach((e, t) => {
+      e.addEventListener("click", () => {
+        manualNav(t), (currentSlide = t);
+      });
+    });
+    var repeat = function (e) {
+      let t = document.getElementsByClassName("active"),
+        n = 1;
+      var s = () => {
+        setTimeout(function () {
+          [...t].forEach((e) => {
+            e.classList.remove("active");
+          }),
+            slides[n].classList.add("active"),
+            btns[n].classList.add("active"),
+            n++,
+            slides.length == n && (n = 0),
+            n >= slides.length || s();
+        }, 35e2);
+      };
+      s();
+    };
+    repeat();
+  </script>
   <script src="./js/main.js"></script>
+
 </body>
 
 </html>

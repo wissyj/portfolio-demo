@@ -11,6 +11,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@500&display=swap" rel="stylesheet" />
   <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+  <link href="img/initial-letter-tw-logo-design-template-linked-vector-29965859.webp" rel="apple-touch-icon">
+
   <link rel="stylesheet" href="./css/main.css" />
   <link rel="stylesheet" href="./css/mobile.css" />
 </head>
@@ -19,6 +21,14 @@
   <div id="preloader">
     <div id="gif"></div>
   </div>
+  <!-- scroll to top -->
+  <a href="#" id="top">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+      <path
+        d="M201.4 137.4c12.5-12.5 32.8-12.5 45.3 0l160 160c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L224 205.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l160-160z" />
+    </svg>
+  </a>
+  <!-- end -->
   <header id="header-inner">
     <div id="container">
       <nav id="main-nav" role="navigation">
@@ -30,8 +40,9 @@
           <li><a href="./index.html">Home</a></li>
           <li><a href="./about.html" class="current">About</a></li>
           <li><a href="./my work.html">My Work</a></li>
-          <li><a href="./contact.html">Contact me</a></li>
         </ul>
+        <a id="contact-btn" class="contact-btn " href="./contact.html">Contact me</a>
+
       </nav>
     </div>
   </header>
@@ -146,8 +157,10 @@
           </div>
           <div class="testimonial-box hidden2 trans-1">
             <div class="testimonial-text bg-dark">
-              <p>Working with <strong> Tech Wissy</strong> was a pleasure. Their creativity and expertise in web design
-                resulted in a stunning website that perfectly represents our business. Truly impressed with the outcome!
+              <p>Working with <strong> Tech Wissy</strong> was a pleasure. Their creativity and expertise in web
+                design
+                resulted in a stunning website that perfectly represents our business. Truly impressed with the
+                outcome!
               </p>
             </div>
             <div class="testimonial-bio hidden2 trans-1">
@@ -158,7 +171,8 @@
           <div class="testimonial-box hidden2 trans-2">
             <div class="testimonial-text bg-dark">
               <p>Impressive web design skills! <strong> Tech Wissy</strong> understood our vision and transformed it
-                into a visually appealing and user-friendly website. Their professionalism and dedication to quality are
+                into a visually appealing and user-friendly website. Their professionalism and dedication to quality
+                are
                 commendable.</p>
             </div>
             <div class="testimonial-bio hidden2 trans-2">
@@ -169,7 +183,8 @@
           <div class="testimonial-box hidden2 trans-3">
             <div class="testimonial-text bg-dark">
               <p>We are thrilled with the web design services provided by <strong> Tech Wissy</strong> . They listened
-                to our requirements, implemented our ideas flawlessly, and delivered a website that showcases our brand
+                to our requirements, implemented our ideas flawlessly, and delivered a website that showcases our
+                brand
                 beautifully. Fantastic job!</p>
             </div>
             <div class="testimonial-bio hidden2 trans-3">
@@ -203,15 +218,7 @@
     </div>
   </footer>
   <script>
-    // preloader
-    window.addEventListener("load", function () {
-      const preloader = document.getElementById("preloader");
-      const loadBody = document.getElementById("header-inner");
-      setTimeout(function () {
-        preloader.style.display = "none";
-        loadBody.style.display = "block";
-      }, 1500);
-    });</script>
+  </script>
   <script src="js/main.js"></script>
 </body>
 

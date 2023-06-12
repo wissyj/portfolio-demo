@@ -2,29 +2,177 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auto Text Flipper</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Auto Text slider</title>
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./css/mobile.css">
+  <style>
+    body {
+      background: url(./img/portfolio\ bg2.webp);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .slide {
+      text-align: center;
+    }
+
+    /* slider */
+    .img-slider {
+      position: relative;
+      width: 100vw;
+      height: 300px;
+      background: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 2.5;
+    }
+
+    .img-slider .slide {
+      z-index: 1;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-clip-path: circle(0% at 0 50%);
+      clip-path: circle(0% at 0 50%);
+    }
+
+    .img-slider .slide.active {
+      -webkit-clip-path: circle(50% at 0 80%);
+      clip-path: circle(150% at 0 20%);
+      transition: 2s;
+      transition-property: -webkit-clip-path;
+      transition-property: clip-path;
+      transition-property: clip-path, -webkit-clip-path;
+    }
+
+
+    .img-slider .slide p {
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .img-slider .slide a {
+      transition-delay: 450ms;
+    }
+
+
+    .img-slider .navigation {
+      z-index: 2;
+      position: absolute;
+      display: flex;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .img-slider .navigation .btn {
+      background: rgba(255, 255, 255, 0.5);
+      width: 12px;
+      height: 12px;
+      margin: 10px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .img-slider .navigation .btn.active {
+      background: #2696e9;
+      box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+    }
+  </style>
 </head>
 
 <body>
-    <h1>Auto Text Flipper</h1>
-    <p id="textContainer"></p>
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+    <div class="img-slider">
+      <div class="slide active">
+        <h2 class="">Welcome to <span>Tech Wissy</span></h2>
+        <p class="hidden trans-2">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et
+          est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut.</p>
+        <a href="#about" class="btn-dark hidden ">Read More</a>
+      </div>
+      <div class="slide">
+        <h2 class="">I am a Web Developer</h2>
+        <p class="hidden trans-2">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et
+          est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut.</p>
+        <a href="#about" class="btn-dark hidden ">Read More</a>
+      </div>
+      <div class="slide">
+        <h2 class="">I am a UI/UX Designer</h2>
+        <p class="hidden trans-2">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et
+          est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut.</p>
+        <a href="#about" class="btn-dark hidden ">Read More</a>
+      </div>
+      <div class="navigation">
+        <div class="btn active"></div>
+        <div class="btn"></div>
+        <div class="btn"></div>
+      </div>
+    </div>
+  </section><!-- End Hero -->
 
 
-    <script>
-        var words = ["Hello", "World", "JavaScript", "Flipper"];
-        var currentIndex = 0;
-        var textContainer = document.getElementById("textContainer");
-
-        function flipText() {
-            textContainer.textContent = words[currentIndex];
-            currentIndex = (currentIndex + 1) % words.length;
-        }
-
-        setInterval(flipText, 2000); // Flip the text every 2 seconds (2000 milliseconds)
-    </script>
+  <script>
+    // slides
+    const img = document.querySelectorAll(".slide img");
+    var slides = document.querySelectorAll(".slide"),
+      btns = document.querySelectorAll(".btn");
+    let currentSlide = 1;
+    var manualNav = function (e) {
+      slides.forEach((e) => {
+        e.classList.remove("active"),
+          btns.forEach((e) => {
+            e.classList.remove("active");
+          });
+      }),
+        slides[e].classList.add("active"),
+        btns[e].classList.add("active");
+    };
+    btns.forEach((e, t) => {
+      e.addEventListener("click", () => {
+        manualNav(t), (currentSlide = t);
+      });
+    });
+    var repeat = function (e) {
+      let t = document.getElementsByClassName("active"),
+        n = 1;
+      var s = () => {
+        setTimeout(function () {
+          [...t].forEach((e) => {
+            e.classList.remove("active");
+          }),
+            slides[n].classList.add("active"),
+            btns[n].classList.add("active"),
+            n++,
+            slides.length == n && (n = 0),
+            n >= slides.length || s();
+        }, 35e2);
+      };
+      s();
+    };
+    repeat();
+    //intersection observer begins
+    const observer = new IntersectionObserver((e) => {
+      e.forEach((e) => {
+        console.log(e),
+          e.isIntersecting
+            ? (e.target.classList.add("show"),
+              e.target.classList.add("show2"))
+            : (e.target.classList.remove("show"),
+              e.target.classList.remove("show2"));
+      });
+    }),
+      hidden = document.querySelectorAll(".hidden"),
+      hidden2 = document.querySelectorAll(".hidden2");
+    hidden.forEach((e) => observer.observe(e)),
+      hidden2.forEach((e) => observer.observe(e));
+  </script>
 </body>
 
 </html>
