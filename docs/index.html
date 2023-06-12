@@ -32,8 +32,11 @@
       <div class="header-container">
         <nav id="main-nav" role="navigation">
           <h3 class="py-5 ">
-            <div class="logo" alt="logo image"></div>
+            <a href="./index.html">
+              <div class="logo" alt="logo image"></div>
+            </a>
             <p>Tech Wissy</p>
+
           </h3>
           <ul>
             <li><a href="./index.html" class="current">Home</a></li>
@@ -87,28 +90,32 @@
   <section id="hero">
     <div class="img-slider">
       <div class="slide active">
-        <h2 class="">Welcome to <span>Tech Wissy</span></h2>
-        <p class="hidden trans-2">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et
-          est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut.</p>
-        <a href="#about" class="btn-dark hidden ">Read More</a>
+        <h2 class="hidden3">Welcome to <span>Tech Wissy</span></h2>
+        <p class="hidden trans-2">Welcome to Tech Wissy, where technology meets expertise. Let's embark on this
+          tech-savvy journey together!</p>
+        <a href="./about.html" class="btn-dark hidden ">Read More</a>
       </div>
       <div class="slide">
-        <h2 class="">I am a Web Developer</h2>
-        <p class="hidden trans-2">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et
-          est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut.</p>
-        <a href="#about" class="btn-dark hidden ">Read More</a>
+        <h2 class="hidden3">I am a Web Developer</h2>
+        <p class="hidden trans-2">Turning ideas into dynamic websites with clean code. Welcome to the realm of web
+          development!</p>
+        <a href="./about.html" class="btn-dark hidden ">Read More</a>
       </div>
       <div class="slide">
-        <h2 class="">I am a UI/UX Designer</h2>
-        <p class="hidden trans-2">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et
-          est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut.</p>
-        <a href="#about" class="btn-dark hidden ">Read More</a>
+        <h2 class="hidden3">I am a UI/UX Designer</h2>
+        <p class="hidden trans-2"> Crafting delightful user experiences through intuitive design. Let's shape the
+          digital world together.
+        </p>
+        <a href="./about.html" class="btn-dark hidden ">Read More</a>
       </div>
-      <div class="navigation">
-        <div class="btn active"></div>
-        <div class="btn"></div>
-        <div class="btn"></div>
+      <div class="slide">
+        <h2 class="hidden3">I am a Video Editor</h2>
+        <p class="hidden trans-2"> Crafting delightful user experiences through intuitive design. Let's shape the
+          digital world together.
+        </p>
+        <a href="./about.html" class="btn-dark hidden ">Read More</a>
       </div>
+
     </div>
   </section><!-- End Hero -->
   <section id="home-a" class="text-center py-2 ">
@@ -309,49 +316,73 @@
     function flipText() {
       textContainer.textContent = words[currentIndex];
       currentIndex = (currentIndex + 1) % words.length;
-      repeat();
-    } setInterval(flipText, 3000); // Flip the text every 3 seconds (3000 milliseconds)
+    } setInterval(flipText, 3000); //
+    //  Flip the text every 3 seconds (3000 milliseconds)
     // slides
-    const img = document.querySelectorAll(".slide img");
-    var slides = document.querySelectorAll(".slide"),
-      btns = document.querySelectorAll(".btn");
-    let currentSlide = 1;
-    var manualNav = function (e) {
-      slides.forEach((e) => {
-        e.classList.remove("active"),
-          btns.forEach((e) => {
-            e.classList.remove("active");
-          });
-      }),
-        slides[e].classList.add("active"),
-        btns[e].classList.add("active");
-    };
-    btns.forEach((e, t) => {
-      e.addEventListener("click", () => {
-        manualNav(t), (currentSlide = t);
-      });
-    });
-    var repeat = function (e) {
-      let t = document.getElementsByClassName("active"),
-        n = 1;
-      var s = () => {
-        setTimeout(function () {
-          [...t].forEach((e) => {
-            e.classList.remove("active");
-          }),
-            slides[n].classList.add("active"),
-            btns[n].classList.add("active"),
-            n++,
-            slides.length == n && (n = 0),
-            n >= slides.length || s();
-        }, 35e2);
-      };
-      s();
-    };
-    repeat();
+    // const img = document.querySelectorAll(".slide img");
+    // var slides = document.querySelectorAll(".slide"),
+    //   btns = document.querySelectorAll(".btn");
+    // let currentSlide = 1;
+    // var manualNav = function (e) {
+    //   slides.forEach((e) => {
+    //     e.classList.remove("active"),
+    //       btns.forEach((e) => {
+    //         e.classList.remove("active");
+    //       });
+    //   }),
+    //     slides[e].classList.add("active"),
+    //     btns[e].classList.add("active");
+    // };
+    // btns.forEach((e, t) => {
+    //   e.addEventListener("click", () => {
+    //     manualNav(t), (currentSlide = t);
+    //   });
+    // });
+    // var repeat = function (e) {
+    //   let t = document.getElementsByClassName("active"),
+    //     n = 1;
+    //   var s = () => {
+    //     setTimeout(function () {
+    //       [...t].forEach((e) => {
+    //         e.classList.remove("active");
+    //       }),
+    //         slides[n].classList.add("active"),
+    //         btns[n].classList.add("active"),
+    //         n++,
+    //         slides.length == n && (n = 0),
+    //         n >= slides.length || s();
+    //     }, 35e2);
+    //   };
+    //   s();
+    // };
+    // repeat();
+    var images = document.querySelectorAll('.slide');
+    var currentImageIndex = 0;
+    function showImage(index) {
+      // Hide all images
+      for (var i = 0; i < images.length; i++) {
+        images[i].classList.remove('active');
+      }
+      // Show the image at the specified index
+      images[index].classList.add('active');
+    }
+    function playCarousel() {
+      showImage(currentImageIndex);
+      // Increment the image index
+      currentImageIndex++;
+      // Reset index to 0 when reaching the end
+      if (currentImageIndex >= images.length) {
+        currentImageIndex = 0;
+      }
+    }
+    // Start the carousel and set interval for automatic play
+    var interval = setInterval(playCarousel, 3000); // Change image every 3 seconds
+
+
   </script>
   <script src="./js/main.js"></script>
 
 </body>
+<!-- check in gpt, how to make a function that watches for a particular class called hidden3 in an element . It will remove the hidden3 and add show3 -->
 
 </html>
