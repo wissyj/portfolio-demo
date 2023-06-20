@@ -12,39 +12,47 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@500&display=swap" rel="stylesheet" />
-  <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
-  <link href="img/initial-letter-tw-logo-design-template-linked-vector-29965859.webp" rel="apple-touch-icon">
-
+  <link rel="apple-touch-icon" sizes="180x180" href="/docs/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/docs/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/docs/favicon-16x16.png">
+  <link rel="manifest" href="/docs/site.webmanifest">
   <link rel="stylesheet" href="./css/main.css" />
   <link rel="stylesheet" href="./css/mobile.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-
 
 </head>
 <!-- create readme.md file -->
+<!-- get your picture from whatsapp and  -->
 
 <body>
   <div id="preloader">
     <div id="gif"></div>
   </div>
+  <!-- scroll to top -->
+  <a href="#" id="top">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+      <path
+        d="M201.4 137.4c12.5-12.5 32.8-12.5 45.3 0l160 160c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L224 205.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l160-160z" />
+    </svg>
+  </a>
+  <!-- end -->
   <header id="header-home">
     <div id="container">
       <div class="header-container">
         <nav id="main-nav" role="navigation">
           <h3 class="py-5 ">
-            <a href="./index.html">
-              <div class="logo" alt="logo image"></div>
-            </a>
-            <p>Tech Wissy</p>
-
+            <a href="./index.html" style="display: flex; align-items: center; justify-content: space-between;">
+              <div class="logo" alt="logo image"></div>Tech Wissy
+            </a><i id="openMenu" class="fa-solid fa-bars-staggered fa-lg"></i>
+            <i id="closeMenu" class="fa-solid fa-xmark fa-lg"></i>
+            <!-- <img id="openMenu" src="./img/ham1.png" alt="">
+            <img id="closeMenu" src="./img/x1.png" alt=""> -->
           </h3>
-          <ul>
+          <ul id="navMenu">
             <li><a href="./index.html" class="current">Home</a></li>
             <li><a href="./about.html">About</a></li>
             <li><a href="./my work.html">My Work</a></li>
           </ul>
-          <a id="contact-btn" class="contact-btn " href="./contact.html">Contact me</a>
-
+          <a id="navMenu" href="#"><button type="button" class="contact-btn button"><span></span>Contact me</button></a>
         </nav>
         <div class="header-box">
 
@@ -90,32 +98,35 @@
   <section id="hero">
     <div class="img-slider">
       <div class="slide active">
-        <h2 class="hidden3">Welcome to <span>Tech Wissy</span></h2>
-        <p class="hidden trans-2">Welcome to Tech Wissy, where technology meets expertise. Let's embark on this
+        <h2 class="anim-top">Welcome to <span>Tech Wissy</span></h2>
+        <p class="anim-bottom trans-2">Welcome to Tech Wissy, where technology meets expertise. Let's embark on this
           tech-savvy journey together!</p>
-        <a href="./about.html" class="btn-dark hidden ">My Work</a>
+        <a href="./my work.html"><button type="button" class="button anim-bottom trans-2"><span></span>My
+            Work</button></a>
       </div>
       <div class="slide">
-        <h2 class="hidden3">I am a Web Developer</h2>
-        <p class="hidden trans-2">Turning ideas into dynamic websites with clean code. Welcome to the realm of web
+        <h2 class="anim-top">I am a Web Developer</h2>
+        <p class="anim-bottom trans-2">Turning ideas into dynamic websites with clean code. Welcome to the realm of web
           development!</p>
-        <a href="./about.html" class="btn-dark hidden ">My Work</a>
+        <a href="./my work.html"><button type="button" class="button anim-bottom trans-2"><span></span>My
+            Work</button></a>
       </div>
       <div class="slide">
-        <h2 class="hidden3">I am a UI/UX Designer</h2>
-        <p class="hidden trans-2"> Crafting delightful user experiences through intuitive design. Let's shape the
+        <h2 class="anim-top">I am a UI/UX Designer</h2>
+        <p class="anim-bottom trans-2"> Crafting delightful user experiences through intuitive design. Let's shape the
           digital world together.
         </p>
-        <a href="./about.html" class="btn-dark hidden ">My Work</a>
+        <a href="./my work.html"><button type="button" class="button anim-bottom trans-2"><span></span>My
+            Work</button></a>
       </div>
       <div class="slide">
-        <h2 class="hidden3">I am a Video Editor</h2>
-        <p class="hidden trans-2"> Crafting delightful user experiences through intuitive design. Let's shape the
+        <h2 class="anim-top">I am a Video Editor</h2>
+        <p class="anim-bottom trans-2"> Crafting delightful user experiences through intuitive design. Let's shape the
           digital world together.
         </p>
-        <a href="./about.html" class="btn-dark hidden ">My Work</a>
+        <a href="./my work.html"><button type="button" class="button anim-bottom trans-2"><span></span>My
+            Work</button></a>
       </div>
-
     </div>
   </section><!-- End Hero -->
   <section id="home-a" class="text-center py-2 ">
@@ -334,11 +345,31 @@
 
         currentSlide = (currentSlide + 1) % slides.length;
       }
+      btns = document.querySelectorAll(".btn");
 
       showSlide(); // Show initial slide
       setInterval(showSlide, 4000); // Repeat every 4 seconds
     }
     autoSlide();
+    //intersection observer for home page animation begins
+    const animObserve = new IntersectionObserver((e) => {
+      e.forEach((e) => {
+        console.log(e),
+          e.isIntersecting
+            ? (e.target.classList.add("anim-bottom-show"),
+              e.target.classList.add("anim-top-show"),
+              animObserve.observe(e.target))
+            : (e.target.classList.remove("anim-bottom-show"),
+              e.target.classList.remove("anim-top-show"));
+      });
+    }),
+      animBottom = document.querySelectorAll(".anim-bottom"),
+      animTop = document.querySelectorAll(".anim-top");
+
+    animBottom.forEach((e) => animObserve.observe(e)),
+      animTop.forEach((e) => animObserve.observe(e));
+// home page animation ends
+// end
   </script>
   <script src="./js/main.js"></script>
 

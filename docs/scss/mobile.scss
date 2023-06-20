@@ -2,10 +2,12 @@
 @import "utilities";
 .first-btn {
   background-color: $main-color;
-  border-radius: 10px;
-  transition: all 0.3s;
+  border-radius: 20px;
+  transition: all 0.4s;
   &:hover {
-    border: 1px solid $dark-color;
+    transform: translateY(5px);
+    background-color: $dark-color !important;
+    color: #fff;
   }
 }
 @media (max-width: 780px) {
@@ -52,7 +54,7 @@
     align-items: center;
     justify-content: center;
     line-height: 2.5;
-    background-image: linear-gradient(359deg, #ffffff 0%, #8080ff 100%);
+    background-image: linear-gradient(359deg, #fff 5%, #8080ff 95%);
     overflow: hidden;
   }
 
@@ -66,19 +68,21 @@
     transition: all 0.3s;
     padding: 0 0.5rem;
     text-align: center;
+    line-height: 1.8;
   }
 
   .img-slider .slide.active {
     display: block;
   }
   .img-slider .slide h2 {
-    font-size: 1.5rem;
+    font-size: 2rem;
     transition: all 0.3s;
+    line-height: 1.2;
   }
   .img-slider .slide p {
-    line-height: 1.2;
     margin-bottom: 1rem;
     font-size: 1.2rem;
+    line-height: 1.5;
   }
 
   .img-slider .slide a {
@@ -111,20 +115,37 @@
 
   #header {
     &-home {
-      height: 13rem;
-      border-bottom: 2px solid $main-color;
-      background-image: $bg-image;
-      background-position: 100% top;
+      height: fit-content;
+      padding: 1rem 0;
+      background: #8080ff;
+      border-bottom: 2px solid #fff;
       #main-nav {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        padding: 0;
+        background-image: transparent;
+
+        & ul,
+        & a:last-child {
+          display: none;
+        }
+
         h3 {
           color: #fff;
+          width: 100vw;
+          justify-content: space-between;
+          padding: 0 1rem;
+          & a:first-child {
+            border-bottom: none;
+          }
+          & i {
+            width: 2rem;
+            height: 2rem;
+            margin-top: 1.5rem;
+            cursor: pointer;
+          }
         }
       }
-      //header-container
       .header-container {
         background: inherit;
       }
@@ -133,10 +154,9 @@
       }
     }
     &-inner {
-      height: 13rem;
+      height: fit-content;
       border-bottom: 2px solid $main-color;
-      background-image: $bg-image;
-      background-position: top right;
+      background: #8080ff;
       #main-nav {
         flex-direction: column;
         align-items: center;
@@ -144,11 +164,30 @@
         padding: 0;
         h3 {
           color: #fff;
+          width: 100vw;
+          justify-content: space-between;
+          padding: 1rem;
+        }
+        & ul,
+        & a:last-child {
+          display: none;
         }
       }
     }
   }
-
+  #main-nav {
+    h3 {
+      & img {
+        display: block;
+        width: 2rem;
+        height: 2rem;
+        cursor: pointer;
+      }
+      #closeMenu {
+        display: none;
+      }
+    }
+  }
   //about section
   .about-box {
     display: block;

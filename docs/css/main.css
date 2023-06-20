@@ -33,20 +33,6 @@
   height: 300px;
 }
 
-#main-nav > a:last-child {
-  border-radius: 20px;
-  padding: 1rem;
-  margin: 0.5rem 0;
-  background: #ffbc00;
-  color: #333;
-  font-size: 1.2rem;
-  font-weight: bold;
-  z-index: 9999;
-}
-#main-nav > a:last-child:hover {
-  border-bottom: none;
-}
-
 .btn-dark, .btn-light, .btn-main {
   display: inline-block;
   padding: 0.8rem 2rem;
@@ -72,6 +58,40 @@ button[class^=btn-]:hover,
 a[class^=btn-]:hover,
 input[class^=btn-]:hover {
   background-color: #ffbc00;
+}
+
+.button {
+  position: relative;
+  width: 200px;
+  padding: 20px 0;
+  margin: 10px 0;
+  background: #ffbc00;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #333;
+  overflow: hidden;
+  text-transform: uppercase;
+  z-index: 10;
+  transition: color 0.5s;
+}
+.button:hover {
+  color: #fff;
+}
+.button span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 100%;
+  background-color: #333;
+  z-index: -1;
+  transition: all 0.5s;
+}
+.button:hover span {
+  width: 100%;
 }
 
 .bg-main {
@@ -132,6 +152,33 @@ input[class^=btn-]:hover {
   transform: translateY(0px);
 }
 
+/* animation to make things fade in from bottom */
+.anim-bottom {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateY(100%);
+  transition: all 0.5s;
+}
+
+.anim-bottom-show {
+  opacity: 1;
+  filter: blur(0px);
+  transform: translateY(0px);
+}
+
+.anim-top {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateY(-100%);
+  transition: all 0.3s;
+}
+
+.anim-top-show {
+  opacity: 1;
+  filter: blur(0px);
+  transform: translateY(0px);
+}
+
 .trans-1 {
   transition-delay: 200ms;
 }
@@ -182,6 +229,7 @@ input[class^=btn-]:hover {
 
 body {
   font-family: "Dosis", sans-serif;
+  overflow-x: hidden;
 }
 
 h2,
@@ -241,6 +289,8 @@ img {
   z-index: 1000;
   border-radius: 5px;
   border: 1px solid #333;
+  display: none;
+  transition: all 0.3s;
 }
 #top svg {
   width: 2rem;
@@ -292,10 +342,20 @@ img {
   height: fit-content;
   gap: 0.5rem;
 }
+#main-nav h3 img {
+  display: none;
+}
+#main-nav h3 a:hover {
+  border-bottom: none;
+}
 #main-nav p {
   margin: auto 0;
   font-weight: 800;
   letter-spacing: 0.1rem;
+}
+#main-nav > a:hover {
+  border-bottom: none !important;
+  color: none;
 }
 
 #header-home {
@@ -303,6 +363,7 @@ img {
   color: #333;
   background-color: #fff;
   z-index: 10;
+  width: 100vw;
 }
 #header-home .header-container {
   background-color: #ffffff;
@@ -423,7 +484,6 @@ img {
   height: calc(100vh + 3rem);
   display: flex;
   justify-content: center;
-  background: url(../img/portfolio\ bg2.webp) no-repeat center right/cover;
   position: relative;
   top: -3rem;
   padding-top: 1.5rem;
@@ -444,7 +504,7 @@ img {
   left: 0;
   z-index: 999999;
   height: 5rem;
-  background: url(../img/portfolio\ bg2.webp) no-repeat 50% 10%/cover;
+  background: #8080ff;
   color: #fff;
   border-bottom: 2px solid #ffbc00;
 }
@@ -453,6 +513,9 @@ img {
   display: none;
 }
 
+#home-a {
+  margin-top: 2rem;
+}
 #home-a .specials {
   margin-top: 3rem;
   display: grid;
@@ -610,7 +673,6 @@ img {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 0.5rem;
-  grid-auto-flow: column;
 }
 .testimonial-container .testimonial-box .testimonial-text {
   width: 15rem;

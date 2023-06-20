@@ -33,20 +33,6 @@
   height: 300px;
 }
 
-#main-nav > a:last-child {
-  border-radius: 20px;
-  padding: 1rem;
-  margin: 0.5rem 0;
-  background: #ffbc00;
-  color: #333;
-  font-size: 1.2rem;
-  font-weight: bold;
-  z-index: 9999;
-}
-#main-nav > a:last-child:hover {
-  border-bottom: none;
-}
-
 .btn-dark, .btn-light, .btn-main {
   display: inline-block;
   padding: 0.8rem 2rem;
@@ -72,6 +58,40 @@ button[class^=btn-]:hover,
 a[class^=btn-]:hover,
 input[class^=btn-]:hover {
   background-color: #ffbc00;
+}
+
+.button {
+  position: relative;
+  width: 200px;
+  padding: 20px 0;
+  margin: 10px 0;
+  background: #ffbc00;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #333;
+  overflow: hidden;
+  text-transform: uppercase;
+  z-index: 10;
+  transition: color 0.5s;
+}
+.button:hover {
+  color: #fff;
+}
+.button span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 100%;
+  background-color: #333;
+  z-index: -1;
+  transition: all 0.5s;
+}
+.button:hover span {
+  width: 100%;
 }
 
 .bg-main {
@@ -132,6 +152,33 @@ input[class^=btn-]:hover {
   transform: translateY(0px);
 }
 
+/* animation to make things fade in from bottom */
+.anim-bottom {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateY(100%);
+  transition: all 0.5s;
+}
+
+.anim-bottom-show {
+  opacity: 1;
+  filter: blur(0px);
+  transform: translateY(0px);
+}
+
+.anim-top {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateY(-100%);
+  transition: all 0.3s;
+}
+
+.anim-top-show {
+  opacity: 1;
+  filter: blur(0px);
+  transform: translateY(0px);
+}
+
 .trans-1 {
   transition-delay: 200ms;
 }
@@ -175,11 +222,13 @@ input[class^=btn-]:hover {
 
 .first-btn {
   background-color: #ffbc00;
-  border-radius: 10px;
-  transition: all 0.3s;
+  border-radius: 20px;
+  transition: all 0.4s;
 }
 .first-btn:hover {
-  border: 1px solid #333;
+  transform: translateY(5px);
+  background-color: #333 !important;
+  color: #fff;
 }
 
 @media (max-width: 780px) {
@@ -212,7 +261,7 @@ input[class^=btn-]:hover {
     align-items: center;
     justify-content: center;
     line-height: 2.5;
-    background-image: linear-gradient(359deg, #ffffff 0%, #8080ff 100%);
+    background-image: linear-gradient(359deg, #fff 5%, #8080ff 95%);
     overflow: hidden;
   }
   .img-slider .slide {
@@ -225,18 +274,20 @@ input[class^=btn-]:hover {
     transition: all 0.3s;
     padding: 0 0.5rem;
     text-align: center;
+    line-height: 1.8;
   }
   .img-slider .slide.active {
     display: block;
   }
   .img-slider .slide h2 {
-    font-size: 1.5rem;
+    font-size: 2rem;
     transition: all 0.3s;
+    line-height: 1.2;
   }
   .img-slider .slide p {
-    line-height: 1.2;
     margin-bottom: 1rem;
     font-size: 1.2rem;
+    line-height: 1.5;
   }
   .img-slider .slide a {
     transition-delay: 450ms;
@@ -263,19 +314,35 @@ input[class^=btn-]:hover {
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
   }
   #header-home {
-    height: 13rem;
-    border-bottom: 2px solid #ffbc00;
-    background-image: url(../img/portfolio\ bg2.webp);
-    background-position: 100% top;
+    height: -moz-fit-content;
+    height: fit-content;
+    padding: 1rem 0;
+    background: #8080ff;
+    border-bottom: 2px solid #fff;
   }
   #header-home #main-nav {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 0;
+    background-image: transparent;
+  }
+  #header-home #main-nav ul, #header-home #main-nav a:last-child {
+    display: none;
   }
   #header-home #main-nav h3 {
     color: #fff;
+    width: 100vw;
+    justify-content: space-between;
+    padding: 0 1rem;
+  }
+  #header-home #main-nav h3 a:first-child {
+    border-bottom: none;
+  }
+  #header-home #main-nav h3 i {
+    width: 2rem;
+    height: 2rem;
+    margin-top: 1.5rem;
+    cursor: pointer;
   }
   #header-home .header-container {
     background: inherit;
@@ -284,10 +351,10 @@ input[class^=btn-]:hover {
     display: none;
   }
   #header-inner {
-    height: 13rem;
+    height: -moz-fit-content;
+    height: fit-content;
     border-bottom: 2px solid #ffbc00;
-    background-image: url(../img/portfolio\ bg2.webp);
-    background-position: top right;
+    background: #8080ff;
   }
   #header-inner #main-nav {
     flex-direction: column;
@@ -297,6 +364,21 @@ input[class^=btn-]:hover {
   }
   #header-inner #main-nav h3 {
     color: #fff;
+    width: 100vw;
+    justify-content: space-between;
+    padding: 1rem;
+  }
+  #header-inner #main-nav ul, #header-inner #main-nav a:last-child {
+    display: none;
+  }
+  #main-nav h3 img {
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+  }
+  #main-nav h3 #closeMenu {
+    display: none;
   }
   .about-box {
     display: block;
