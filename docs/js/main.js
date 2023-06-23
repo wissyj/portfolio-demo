@@ -42,14 +42,31 @@ hidden.forEach((e) => observer.observe(e)),
 // close and open navbar menu
 const openMenu = document.getElementById("openMenu"),
   closeMenu = document.getElementById("closeMenu"),
-  navMenu = document.getElementById("#header-home  #main-nav  ul");
+  contactBtn = document.querySelector("#header-home  #main-nav > a:last-child"),
+  navMenu = document.querySelector("#header-home  #main-nav  ul");
 openMenu.addEventListener("click", () => {
   (navMenu.style.display = "flex"),
     (closeMenu.style.display = "block"),
+    (contactBtn.style.display = "block"),
     (openMenu.style.display = "none");
-}),
-  closeMenu.addEventListener("click", () => {
-    (navMenu.style.display = "none"),
-      (closeMenu.style.display = "none"),
-      (openMenu.style.display = "");
-  });
+});
+closeMenu.addEventListener("click", () => {
+  (navMenu.style.display = "none"),
+    (closeMenu.style.display = "none"),
+    (contactBtn.style.display = "none"),
+    (openMenu.style.display = "");
+});
+// modal
+const close = document.getElementById('close');
+const open = document.getElementById('open');
+const modal = document.getElementById('modal');
+// Show modal
+open.addEventListener('click', () => modal.classList.add('show-modal'));
+
+// Hide modal
+close.addEventListener('click', () => modal.classList.remove('show-modal'));
+
+// Hide modal on outside click
+window.addEventListener('click', e =>
+    e.target == modal ? modal.classList.remove('show-modal') : false
+);

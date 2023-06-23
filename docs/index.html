@@ -35,6 +35,60 @@
     </svg>
   </a>
   <!-- end -->
+  <!-- Modal -->
+  <div class="modal-container" id="modal">
+    <div class="modal">
+      <button class="close-btn" id="close">
+        <i class="fa-solid fa-xmark fa-lg"></i>
+        <img style="width: 2rem; height:2rem;" src="./img/x2.jpeg" alt="">
+      </button>
+      <div class="modal-header">
+        <h3>Let 's Build your Project</h3>
+      </div>
+      <div class="modal-content">
+        <p>Reach out to me to get discounts, support and more.</p>
+        <form class="modal-form">
+          <div>
+            <div class="flex-names">
+              <div><label for="name">First Name</label>
+                <input type="text" id="firstName" placeholder="Enter First Name" class="form-input" />
+              </div>
+              <div><label for="name">Surname</label>
+                <input type="text" id="lastName" placeholder="Enter Surname" class="form-input" />
+              </div>
+            </div>
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Enter Email" class="form-input" />
+          </div>
+          <div>
+            <label for="name">Phone Number</label>
+            <input type="text" id="phoneNumber" placeholder="Enter Phone Number" class="form-input" />
+          </div>
+          <div>
+            <div class="contact-icons">
+              <p>Contact: <span>+234-9012345678</span></p>
+              <ul>
+                <li><a href="https://facebook.com"><img loading="lazy" src="./img/facebook.avif"
+                      alt="facebook icon"></a></li>
+                <li><a href="https://twitter.com"><img loading="lazy" src="./img/twitter.avif" alt="twitter icon"></a>
+                </li>
+                <li><a href="https://Instagram.com"><img loading="lazy" src="./img/instagram.avif"
+                      alt="Instagram icon"></a></li>
+                <li><a href="https://Linkedin.com"><img loading="lazy" src="./img/linkedin2.avif"
+                      alt="LinkedIn icon"></a></li>
+                <li><a href="https://Dribble.com"><img loading="lazy" src="./img/dribble.avif" alt="Dribble icon"></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <input type="submit" value="Submit" class="btn-dark submit-btn" />
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- modal container ends -->
   <header id="header-home">
     <div id="container">
       <div class="header-container">
@@ -44,15 +98,13 @@
               <div class="logo" alt="logo image"></div>Tech Wissy
             </a><i id="openMenu" class="fa-solid fa-bars-staggered fa-lg"></i>
             <i id="closeMenu" class="fa-solid fa-xmark fa-lg"></i>
-            <!-- <img id="openMenu" src="./img/ham1.png" alt="">
-            <img id="closeMenu" src="./img/x1.png" alt=""> -->
           </h3>
           <ul id="navMenu">
             <li><a href="./index.html" class="current">Home</a></li>
             <li><a href="./about.html">About</a></li>
             <li><a href="./my work.html">My Work</a></li>
           </ul>
-          <a id="navMenu" href="#"><button type="button" class="contact-btn button"><span></span>Contact me</button></a>
+          <a href="#"><button type="button" class="contact-btn button " id="open"><span></span>Contact me</button></a>
         </nav>
         <div class="header-box">
 
@@ -86,9 +138,7 @@
             <p class="bottom-text hidden">Your Satisfaction is my utmost concern.</p>
           </div>
           <div class="header-content-two">
-            <h3 class="py-5 hidden">
-              <div class="logo"></div>
-            </h3>
+            <div> <img src="./img/laptop3.jpg" alt=""></div>
           </div>
         </div>
       </div>

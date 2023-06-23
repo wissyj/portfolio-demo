@@ -119,15 +119,26 @@
       padding: 1rem 0;
       background: #8080ff;
       border-bottom: 2px solid #fff;
+      transition: all 1s;
+
       #main-nav {
         flex-direction: column;
         align-items: center;
         justify-content: center;
         background-image: transparent;
-
-        & ul,
-        & a:last-child {
+        #closeMenu {
           display: none;
+        }
+        // & ul,
+        // & a:last-child {
+        //   display: none;
+        // }
+        & ul {
+          display: none;
+        }
+        & > a:last-child {
+          display: none;
+          transition: all 1s;
         }
 
         h3 {
@@ -143,6 +154,7 @@
             height: 2rem;
             margin-top: 1.5rem;
             cursor: pointer;
+            display: contents;
           }
         }
       }
@@ -162,16 +174,29 @@
         align-items: center;
         justify-content: center;
         padding: 0;
+        #closeMenu {
+          display: none;
+        }
         h3 {
           color: #fff;
           width: 100vw;
           justify-content: space-between;
           padding: 1rem;
+          & i {
+            width: 2rem;
+            height: 2rem;
+            margin-top: 1.5rem;
+            cursor: pointer;
+            display: contents;
+          }
         }
-        & ul,
-        & a:last-child {
-          display: none;
-        }
+        // & ul {
+        //   display: none;
+        // }
+        // & > a:last-child {
+        //   display: none;
+        //   transition: all 1s;
+        // }
       }
     }
   }
@@ -182,9 +207,6 @@
         width: 2rem;
         height: 2rem;
         cursor: pointer;
-      }
-      #closeMenu {
-        display: none;
       }
     }
   }

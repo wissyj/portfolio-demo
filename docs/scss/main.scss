@@ -119,7 +119,7 @@ img {
     width: fit-content;
     height: fit-content;
     gap: 0.5rem;
-    & img {
+    & i {
       display: none;
     }
     & a:hover {
@@ -136,7 +136,128 @@ img {
     color: none;
   }
 }
+// end of navbar
+// modal container
+.modal-container {
+  background-color: rgba(0, 0, 0, 0.6);
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000000;
+}
 
+.modal-container.show-modal {
+  display: block;
+}
+
+.modal {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 100%;
+  width: 400px;
+  animation-name: modalopen;
+  animation-duration: 1s;
+}
+
+.modal-header {
+  background: $main-color;
+  color: $dark-color;
+  padding: 15px;
+}
+
+.modal-content {
+  padding: 20px;
+  & p {
+    text-align: center;
+    font-size: 1.1rem;
+  }
+}
+
+.modal-form div {
+  margin: 15px 0;
+  .flex-names {
+    display: flex;
+    width: 100%;
+    gap: 0.5rem;
+    & div {
+      width: 50%;
+    }
+  }
+}
+
+.modal-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.modal-form .form-input {
+  padding: 8px;
+  width: 100%;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid $dark-color;
+  &:focus {
+    border-bottom-color: $main-color;
+  }
+}
+.contact-icons {
+  position: relative;
+  width: 100%;
+  p {
+    text-align: center;
+    margin-bottom: 1rem;
+    span {
+      text-decoration: underline;
+    }
+  }
+  ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 1rem;
+    li {
+      & a {
+        width: 2rem;
+        height: 2rem;
+        & img {
+          width: 2rem;
+          height: 2rem;
+          border: 2px solid $medium-color;
+          border-radius: 50%;
+          &:hover {
+            border: 2px solid $main-color;
+          }
+        }
+      }
+    }
+  }
+}
+.close-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
+
+@keyframes modalopen {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+// end
 //header
 #header {
   &-home {
@@ -164,7 +285,7 @@ img {
         height: 100vh;
         .bottom-text {
           position: relative;
-          top: -5rem;
+          top: -7rem;
           bottom: 0;
           left: 50vw;
           z-index: 10000;
@@ -269,18 +390,17 @@ img {
         height: calc(100vh + 3rem);
         display: flex;
         justify-content: center;
-
         position: relative;
         top: -3rem;
-        padding-top: 1.5rem;
-        h3 {
-          position: absolute;
-          left: 40%;
-          top: 40%;
-          color: #fff;
-          .logo {
-            width: 8rem;
-            height: 8rem;
+
+        div {
+          width: 30rem;
+          height: calc(100vh + 3rem);
+          position: relative;
+          img {
+            width: 100%;
+            height: 100%;
+            filter: brightness(0.7);
           }
         }
       }
@@ -412,6 +532,7 @@ img {
     grid-area: bio-image;
     width: 100%;
     height: 100%;
+    border-radius: 100%;
   }
   & .bio {
     grid-area: bio;

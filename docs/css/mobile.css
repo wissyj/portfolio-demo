@@ -319,6 +319,7 @@ input[class^=btn-]:hover {
     padding: 1rem 0;
     background: #8080ff;
     border-bottom: 2px solid #fff;
+    transition: all 1s;
   }
   #header-home #main-nav {
     flex-direction: column;
@@ -326,8 +327,15 @@ input[class^=btn-]:hover {
     justify-content: center;
     background-image: transparent;
   }
-  #header-home #main-nav ul, #header-home #main-nav a:last-child {
+  #header-home #main-nav #closeMenu {
     display: none;
+  }
+  #header-home #main-nav ul {
+    display: none;
+  }
+  #header-home #main-nav > a:last-child {
+    display: none;
+    transition: all 1s;
   }
   #header-home #main-nav h3 {
     color: #fff;
@@ -343,6 +351,7 @@ input[class^=btn-]:hover {
     height: 2rem;
     margin-top: 1.5rem;
     cursor: pointer;
+    display: contents;
   }
   #header-home .header-container {
     background: inherit;
@@ -362,23 +371,27 @@ input[class^=btn-]:hover {
     justify-content: center;
     padding: 0;
   }
+  #header-inner #main-nav #closeMenu {
+    display: none;
+  }
   #header-inner #main-nav h3 {
     color: #fff;
     width: 100vw;
     justify-content: space-between;
     padding: 1rem;
   }
-  #header-inner #main-nav ul, #header-inner #main-nav a:last-child {
-    display: none;
+  #header-inner #main-nav h3 i {
+    width: 2rem;
+    height: 2rem;
+    margin-top: 1.5rem;
+    cursor: pointer;
+    display: contents;
   }
   #main-nav h3 img {
     display: block;
     width: 2rem;
     height: 2rem;
     cursor: pointer;
-  }
-  #main-nav h3 #closeMenu {
-    display: none;
   }
   .about-box {
     display: block;
