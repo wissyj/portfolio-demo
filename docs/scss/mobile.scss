@@ -129,10 +129,6 @@
         #closeMenu {
           display: none;
         }
-        // & ul,
-        // & a:last-child {
-        //   display: none;
-        // }
         & ul {
           display: none;
         }
@@ -188,25 +184,16 @@
             margin-top: 1.5rem;
             cursor: pointer;
             display: contents;
+            z-index: 10000000;
           }
         }
-        // & ul {
-        //   display: none;
-        // }
-        // & > a:last-child {
-        //   display: none;
-        //   transition: all 1s;
-        // }
-      }
-    }
-  }
-  #main-nav {
-    h3 {
-      & img {
-        display: block;
-        width: 2rem;
-        height: 2rem;
-        cursor: pointer;
+        & ul {
+          display: none;
+        }
+        & > a:last-child {
+          display: none;
+          transition: all 1s;
+        }
       }
     }
   }

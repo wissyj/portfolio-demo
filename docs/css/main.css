@@ -425,6 +425,7 @@ img {
   border: none;
   outline: none;
   border-bottom: 1px solid #333;
+  caret-color: #ffbc00;
 }
 .modal-form .form-input:focus {
   border-bottom-color: #ffbc00;
@@ -467,6 +468,7 @@ img {
   top: 0;
   right: 0;
   cursor: pointer;
+  font-size: 2rem;
 }
 
 @keyframes modalopen {

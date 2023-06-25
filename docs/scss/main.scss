@@ -208,6 +208,8 @@ img {
   &:focus {
     border-bottom-color: $main-color;
   }
+  // changes the color of the typing cursor in the input box
+  caret-color: $main-color;
 }
 .contact-icons {
   position: relative;
@@ -246,6 +248,7 @@ img {
   top: 0;
   right: 0;
   cursor: pointer;
+  font-size: 2rem;
 }
 
 @keyframes modalopen {

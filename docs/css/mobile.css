@@ -386,12 +386,14 @@ input[class^=btn-]:hover {
     margin-top: 1.5rem;
     cursor: pointer;
     display: contents;
+    z-index: 10000000;
   }
-  #main-nav h3 img {
-    display: block;
-    width: 2rem;
-    height: 2rem;
-    cursor: pointer;
+  #header-inner #main-nav ul {
+    display: none;
+  }
+  #header-inner #main-nav > a:last-child {
+    display: none;
+    transition: all 1s;
   }
   .about-box {
     display: block;
